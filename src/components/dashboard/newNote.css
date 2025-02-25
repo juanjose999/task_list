@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: rgb(25, 10, 57);
+}
+
+.container_new_note{
+    background-color: rgb(30, 18, 48);
+    padding: 1em;
+}
+.container_new_note .form_container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    & input {
+        padding: 1em;
+        border-radius: 0.3em;
+        background: wheat;
+        color: black;
+    }
+    & textarea {
+        padding: 1em;
+        height: 13em;
+        resize: none;
+        border-radius: 0.3em;
+        background: wheat;
+        color: black;
+    }
+    & button {
+        padding: 1em;
+        background:transparent;
+        color: rgb(200, 192, 192);
+        font-weight: 800;   
+    }
+    & .btn_guardar {
+        background-color: rgba(101, 187, 97, 0.908);
+        color: white;
+    }
+}
+
+.container_new_note .container-prioridad {
+    & span {
+        color: aliceblue;
+    }
+    display: grid;
+    gap: 0.6em;
+    align-items: center;
+    justify-items: stretch;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container_new_note .container-prioridad .active {
+    background-color: rgb(73, 81, 79);
+    color: rgb(225, 225, 225);
+}

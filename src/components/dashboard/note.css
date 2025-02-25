@@ -1,0 +1,143 @@
+.container_card {
+  width: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  
+}
+
+.content {
+  width: 100%;
+  min-width: 100px;
+  height: 100%;
+  border-radius: 0.3em;
+  padding: 1em;
+  background-color: rgb(60, 46, 81);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+}
+
+.card_input {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  color: white;
+  outline: none;
+}
+
+/* Estilo inicial del textarea (3 líneas) */
+.card_textarea {
+  width: 100%;
+  min-width: 100px;
+  height: auto;
+  resize: none;
+  border: none;
+  color: rgb(207, 207, 215);
+  line-height: 1.4;
+  background: transparent;
+  transition: height 0.2s ease-in-out;
+}
+textarea.card_textarea.expanded{
+  height: 16em;
+  overflow: visible;
+}
+.prioridad{
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  & button {
+    background-color: transparent;
+    color: rgb(224, 223, 223);
+    padding: 0.3em 1em;
+    width: 100%;
+    border: none;
+    font-weight: 400;
+  }
+  & span {
+    color: white;
+    font-size: 0.9em;
+  }
+}
+
+
+.btn_prioridad_is{
+  border: none;
+  cursor: pointer;
+  background-color: grey; /* Estado inicial */
+  color: white;
+  transition: background 0.3s ease-in-out;
+  border-radius: 0.3em;
+  &.activeProceso {
+    background-color: rgba(208, 111, 47, 0.871);
+  font-weight: 600;
+  }
+  &.activeTerminada{
+    background-color: rgba(77, 208, 47, 0.816);
+    font-weight: 600;
+  }
+}
+
+/* 🔥 Activa solo la prioridad seleccionada */
+.btn_prioridad_is.active {
+  background-color: rgb(191, 83, 97);
+  font-weight: 600;
+}
+
+.btn_prioridad_is:nth-of-type(2).active {
+  background-color: rgba(109, 117, 205, 0.899);
+}
+
+.container_status_btns{
+  border-radius: 0.6em;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  & span {
+    font-weight: 400;
+    color: rgb(230, 230, 230);
+    font-size: 1em;
+  }
+  button {
+    background-color:transparent;
+    color: white;
+    width: 100%;
+    padding: 0.4em 0em;
+  }
+  &.active {
+    background-color: rgb(191, 83, 97);
+    font-weight: 600;
+  }
+}
+
+.saveBtn {
+  background-color: rgba(101, 187, 97, 0.908);
+  padding: 0.6em;
+  border-radius: 0.3em;
+  border: none;
+  font-weight: 600;
+  color: aliceblue;
+  &:hover{
+    background-color: rgba(78, 148, 74, 0.908);
+    transition:  all 0.3s ease-in;
+  }
+}
+
+.salir {
+  background-color: transparent;
+  position: absolute;
+  right: 5%;
+  transform: translateY(-10%);
+  border: none;
+  filter: invert();
+  & img {
+    width: 2em;
+    height: 2em;
+  }
+}
