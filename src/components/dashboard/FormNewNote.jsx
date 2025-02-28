@@ -60,7 +60,7 @@ export const NewNote = ({ sendNewNote }) => {
 
           <button
           type="button"
-          className={formSendNewNote.priority === "ALTA" ? "active" : ""}
+          className={formSendNewNote.priority === "ALTA" ? "activeAlta" : ""}
            onClick={() => {
             console.log(prioridad)
             setPrioridad("ALTA")
@@ -70,7 +70,7 @@ export const NewNote = ({ sendNewNote }) => {
 
           <button
           type="button"
-          className={formSendNewNote.priority === "BAJA" ? "active" : ""}
+          className={formSendNewNote.priority === "BAJA" ? "activeBaja" : ""}
           onClick={() => {
             setPrioridad("BAJA")
             handlePriorityChange("BAJA")

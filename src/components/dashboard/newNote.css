@@ -16,16 +16,18 @@
     & input {
         padding: 1em;
         border-radius: 0.3em;
-        background: wheat;
-        color: black;
+        background: rgb(41, 23, 77);
+        color: rgb(232, 231, 231);
+        font-size: 1em;
+        font-weight: 600;
     }
     & textarea {
         padding: 1em;
         height: 13em;
         resize: none;
         border-radius: 0.3em;
-        background: wheat;
-        color: black;
+        background: rgb(41, 23, 77);
+        color: rgb(237, 237, 237);
     }
     & button {
         padding: 1em;
@@ -50,7 +52,12 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.container_new_note .container-prioridad .active {
-    background-color: rgb(73, 81, 79);
+.container_new_note .container-prioridad .activeAlta {
+    background-color: rgb(187, 68, 13);
+    color: rgb(225, 225, 225);
+}
+
+.container_new_note .container-prioridad .activeBaja {
+    background-color: rgb(50, 175, 41);
     color: rgb(225, 225, 225);
 }

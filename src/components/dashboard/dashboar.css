@@ -3,7 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 .container_dashboar {
     width: 100%;
     min-height: 100vh;
@@ -18,7 +22,7 @@ h3 {
 }
 
 header {
-    padding: 1em;
+    padding: 1em 1.3em;
     background-color:rgb(30, 18, 48);
     color: black;
     display: flex;
@@ -34,32 +38,116 @@ header {
         border: none;
     }
     & input {
-        padding: 0.6em;
-        color: black;
-        border-radius: 0.3em;
+        padding: 1em;
+        color: white;
+        width: 100%;
+        border-radius: 1em;
+        background-color: rgb(59, 42, 86);
+        border: none;
     }
 }
 
-@media (min-width:700px){
-    .container_dashboar{
+@media (max-width: 699px) {
+
+
+    .container_dashboar {
+        height: auto; /* Permitir que crezca si hay muchas notas */
+        overflow-y: auto; /* Asegurar scroll si es necesario */
+    }
+
+    .container-allNote {
+        width: 100%;
+        max-height: none; /* Permitir que crezca con las notas */
+        overflow-y: visible; /* Dejar que el contenedor crezca con las notas */
+    }
+}
+
+
+@media (min-width: 700px) {
+    header {
+        width: 100%;
+        height: 8%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 2em 3em !important;
+        gap: 4em;
+        & input {
+            width: 22em;
+        }
+    }
+    html, body {
+        overflow: hidden; /* Bloquear scroll en toda la página */
+    }
+    .container_dashboar {
         display: flex;
         flex-direction: row;
-        height: 100vh;
-        overflow: hidden;
-        & .container_new_note {
-            width: 100%;
-            position: sticky;
-        top: 0;
+        height: 100vh; /* Asegurar que ocupe toda la pantalla */
+    }
+    .saveNote {
+        width: 80%;
+        height: 100dvh;
+    }
+
+    /* SECCIÓN FIJA (NewNote) */
+    .container_new_note {
+        width: 100%; /* Ajusta el tamaño según necesites */
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        height: 100dvh; /* Fijo en toda la pantalla */
+        position: sticky;
+        top: 0; /* Fija en la parte superior */
+        & .form_container{
+            width: 80%;
+            height:auto;
+            & textarea{
+                height: 40vh;
+            }
         }
-        & .container-allNote {
-            width: 60%;
-            max-height: 100dvh;
-            overflow-y: auto; /* Habilita el scroll vertical */
-        }
+    }
+
+    .container-allNote {
+        width: 60%;
+        overflow-y: auto; /* Habilita el scroll vertical */
+        max-height: 100vh; /* Limita el alto a la pantalla */
+    }
+    
+    header {
+    padding: 2em 4em 0em 4em;
+    
     }
 }
 
 .btn-salir img {
     width: 2.6em;
     height: 2.4em;
+}
+.btns_filter{
+    width: 100%;
+    height: 100%;
+    gap: 0.6em;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    border-radius: 0.3em;
+    border: none;
+}
+.btn_filter {
+
+    background-color: transparent;
+    border: 2px gray solid;
+    border-radius: 1em;
+    color: white;
+    padding: 1em 2em;
+    & button {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.btn_filter.active {
+    background-color: rgb(119, 147, 158);
+    color: black;
+    transform: scale(1.06);
+    transition: 0.2s ease-in;
 }
